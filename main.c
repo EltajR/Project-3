@@ -2,7 +2,7 @@
 #include <string.h>
 
 // Problem description: https://cs50.harvard.edu/x/2022/psets/2/substitution/
-
+// Test cases available at the link above
 int main (void){
 
     // Function declarations -->
