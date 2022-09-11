@@ -26,7 +26,12 @@ int main (void){
           // Read the plain text from the console -->
           char plain_text[256];
           printf("%s", "Plain text:");
-          scanf("%s", &plain_text);
+          // Use gets () function which does not stop reading
+          // at whitespace but rather at the end of the string entered
+          // # Error - terminates without reading -->
+//          gets(plain_text);
+          // The following causes errors when user enters a text with whitespaces!!!
+           scanf("%s", &plain_text);
 
           // Create another array for encrypted text
           int len_p_txt = strlen(plain_text);
