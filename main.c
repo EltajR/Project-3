@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <string.h>
 
-
+// Problem description: https://cs50.harvard.edu/x/2022/psets/2/substitution/
 
 int main (void){
 
