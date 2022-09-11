@@ -28,17 +28,19 @@ int main (void){
           printf("%s", "Plain text:");
           scanf("%s", &plain_text);
 
-          // Create another array for encrypted text - the same length as the plain text
+          // Create another array for encrypted text
           int len_p_txt = strlen(plain_text);
-          char enc_txt [len_p_txt];
+          // Add space for '\0' marker -->
+          char enc_txt [len_p_txt + 1];
 
           // Encrypt every character in the plain text originally and copy them to the new array -->
           for (int i = 0; i < len_p_txt; ++i) {
               // Return encrypted version
               char enc_char = encrypt(plain_text[i], key);
               // Assign the encrypted version to the string
-              enc_txt[i] = enc_char;
-          }
+              enc_txt[i] = enc_char;}
+          // Add marker to indicate the end of string!!! -->
+          enc_txt[len_p_txt] = '\0';
           printf("%s:%s", "Ciphertext", enc_txt);
       } else printf("%s", "No valid key was entered");
 
