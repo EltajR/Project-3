@@ -31,7 +31,6 @@ int main (void){
           // Create another array for encrypted text - the same length as the plain text
           int len_p_txt = strlen(plain_text);
           char enc_txt [len_p_txt];
-          printf("%s: %i","Plain text length is", len_p_txt);
 
           // Encrypt every character in the plain text originally and copy them to the new array -->
           for (int i = 0; i < len_p_txt; ++i) {
@@ -39,9 +38,8 @@ int main (void){
               char enc_char = encrypt(plain_text[i], key);
               // Assign the encrypted version to the string
               enc_txt[i] = enc_char;
-              printf("%s %i: %c","Character at", i, enc_char);
           }
-          printf("%s: %s", "Ciphertext", enc_txt);
+          printf("%s:%s", "Ciphertext", enc_txt);
       } else printf("%s", "No valid key was entered");
 
 }
