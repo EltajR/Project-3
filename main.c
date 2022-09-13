@@ -2,8 +2,10 @@
 #include <string.h>
 
 // Problem description: https://cs50.harvard.edu/x/2022/psets/2/substitution/
-// Test cases available at the link above
+// Test cases are available at the link above
 int main (void){
+
+    int max_length_str = 256;
 
     // Function declarations -->
     // Checks whether the entered key is a valid one
@@ -12,9 +14,11 @@ int main (void){
     char encrypt (char ,char []);
 
     // Read the key from the console -->
-    char key [256];
+    char key [max_length_str];
     printf("Enter the key:");
-    scanf("%s", &key);
+    scanf("%s", key);
+
+
 
     // Does the key fulfill specifications? -->
     // 1. Is the length equal to 26?
@@ -24,14 +28,14 @@ int main (void){
     // if there is a valid key, continue! -->
       if (true_or_false) {
           // Read the plain text from the console -->
-          char plain_text[256];
+          char plain_text[max_length_str];
           printf("%s", "Plain text:");
-          // Use gets () function which does not stop reading
-          // at whitespace but rather at the end of the string entered
-          // # Error - terminates without reading -->
-//          gets(plain_text);
+
           // The following causes errors when user enters a text with whitespaces!!!
-           scanf("%s", &plain_text);
+          // scanf("%s", plain_text);
+
+          // This code works! Note the extra space in beginning of the format 'marker' !!!
+          scanf(" %[^\n]", plain_text);
 
           // Create another array for encrypted text
           int len_p_txt = strlen(plain_text);
